@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D14-ov-V4k">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="3ut-Wr-L0F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="D14-ov-V4k" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="606-Pq-OqL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Hc-Ge-vxY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="77p-sR-sdp" kind="relationship" relationship="rootViewController" id="kcn-iH-kHf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8l-X1-YIj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1616" y="237"/>
+        </scene>
+        <!--Saved Quotes View Controller-->
+        <scene sceneID="8bd-rd-Llv">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="gVC-lt-mu6" customClass="SavedQuotesViewController" customModule="Inspirational_Bytes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wBX-bh-K4V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspirational quotes provided by ZenQuotes API" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="tkd-sP-o2g" userLabel="ZenQuoteLabel">
+                                <rect key="frame" x="20" y="581" width="335" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yWK-vm-NRl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCells" id="hTp-aU-a3G">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hTp-aU-a3G" id="bJv-bw-ygc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gVC-lt-mu6" id="Ypv-J1-HrG"/>
+                                    <outlet property="delegate" destination="gVC-lt-mu6" id="nlR-DJ-wfs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6gC-P6-LVd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="books.vertical.fill" catalog="system" selectedImage="books.vertical.fill" id="Oyk-mX-4dp"/>
+                    <connections>
+                        <outlet property="tableView" destination="yWK-vm-NRl" id="pFM-Tl-TSP"/>
+                        <segue destination="rCL-Yq-dc4" kind="presentation" identifier="SavedQuotesSegue" modalPresentationStyle="fullScreen" id="NZp-rF-x9Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujU-br-3pg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="604.94752623688157"/>
+        </scene>
+        <!--QOTD View Controller-->
+        <scene sceneID="ZSZ-5C-Jwo">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Hdi-G1-t4O" userLabel="QOTD View Controller" customClass="QOTDViewController" customModule="Inspirational_Bytes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="efJ-QF-pN2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2forquotes" id="lwj-wV-ic4">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Quote Of The Day" textAlignment="center" minimumFontSize="17" id="UME-P5-Y15">
+                                <rect key="frame" x="0.0" y="79" width="375" height="104"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ssn-A4-kk8">
+                                <rect key="frame" x="33" y="555" width="309" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Get Random Quotes"/>
+                                <connections>
+                                    <action selector="GetQuotesButton:" destination="Hdi-G1-t4O" eventType="touchUpInside" id="s1h-U4-Ssm"/>
+                                    <segue destination="rCL-Yq-dc4" kind="presentation" identifier="QOTDSegue" modalPresentationStyle="fullScreen" id="Clv-eI-eho"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspirational quotes provided by ZenQuotes API" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="eD7-Y1-ON6" userLabel="ZenQuoteLabel">
+                                <rect key="frame" x="34" y="524" width="309" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="QrI-Wv-K3o" userLabel="QOTDLabel">
+                                <rect key="frame" x="20" y="88" width="335" height="465"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="fNV-97-muC">
+                                <rect key="frame" x="196" y="453" width="38" height="20"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="FL4-IM-yAt" userLabel="QOTDAuthorLabel">
+                                <rect key="frame" x="34" y="473" width="308" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleAspectFill" id="Aot-dt-ofN">
+                                <rect key="frame" x="0.0" y="62" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="5bQ-kT-M8M">
+                                        <barButtonItem key="leftBarButtonItem" id="sYZ-vs-1Vq">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6mw-LL-YnK">
+                                                <rect key="frame" x="16" y="5" width="95" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="saveToFav:" destination="Hdi-G1-t4O" eventType="touchUpInside" id="7iQ-d8-vAZ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="jhC-Zv-Wh3">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ZBG-f3-07B">
+                                                <rect key="frame" x="264" y="5" width="95" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
+                                                <connections>
+                                                    <action selector="shareButton:" destination="Hdi-G1-t4O" eventType="touchUpInside" id="UAG-5D-amj"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1qE-Qa-3l6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" image="text.bubble.fill" catalog="system" selectedImage="text.bubble.fill" id="4wg-NM-6uc"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="QOTDAuthorLabel" destination="FL4-IM-yAt" id="W3r-2f-SdU"/>
+                        <outlet property="QOTDLabel" destination="QrI-Wv-K3o" id="RVo-7h-ub0"/>
+                        <outlet property="activityIndicator" destination="fNV-97-muC" id="mFF-fk-X8K"/>
+                        <outlet property="favButton" destination="sYZ-vs-1Vq" id="L5I-ej-xjE"/>
+                        <outlet property="getQuoteButton" destination="ssn-A4-kk8" id="WgM-JT-J5n"/>
+                        <outlet property="imageView" destination="lwj-wV-ic4" id="lxZ-if-Ycg"/>
+                        <outlet property="shareButton" destination="jhC-Zv-Wh3" id="vpB-Vx-AL6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDI-qP-tJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260.74766355140184" y="-72.570194384449252"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Abg-dL-R3l">
+            <objects>
+                <tabBarController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="77p-sR-sdp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8um-22-3eV"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b8e-IX-fus">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Hdi-G1-t4O" kind="relationship" relationship="viewControllers" id="Iay-s2-x2h"/>
+                        <segue destination="gVC-lt-mu6" kind="relationship" relationship="viewControllers" id="9jL-is-oMt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcv-g3-bXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-618" y="237"/>
+        </scene>
+        <!--Quote View Controller-->
+        <scene sceneID="BCA-ol-dKp">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="rCL-Yq-dc4" customClass="QuoteViewController" customModule="Inspirational_Bytes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bdF-1o-AlV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundforQuote" id="a6e-SG-WZA" customClass="imageView">
+                                <rect key="frame" x="0.0" y="35" width="375" height="632"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleAspectFill" id="ZWi-k6-8af">
+                                <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="2dO-3h-Vvh">
+                                        <nil key="title"/>
+                                        <barButtonItem key="leftBarButtonItem" id="2ah-t5-CRs">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" id="MHz-EN-cw3">
+                                                <rect key="frame" x="16" y="0.0" width="164.5" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Back" image="icon_back-arrow"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="rCL-Yq-dc4" eventType="touchUpInside" id="FaM-cJ-pHz"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem id="KMS-VC-EEP">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Xma-Yn-tAL">
+                                                    <rect key="frame" x="310.5" y="0.0" width="48.5" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="shareButton:" destination="rCL-Yq-dc4" eventType="touchUpInside" id="Whm-hy-Qdf"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem id="jb3-sD-mPz">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jcS-IN-lGJ">
+                                                    <rect key="frame" x="233.5" y="0.0" width="69" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="saveToFav:" destination="rCL-Yq-dc4" eventType="touchUpInside" id="nns-jy-Mcp"/>
+                                                    </connections>
+                                                </button>
+                                                <connections>
+                                                    <action selector="saveToFav:" destination="rCL-Yq-dc4" id="Lz9-Vb-JoN"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGW-5m-PyN">
+                                <rect key="frame" x="7" y="587" width="362" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Give Me Another"/>
+                                <connections>
+                                    <action selector="NewQuoteButton:" destination="rCL-Yq-dc4" eventType="touchUpInside" id="mUT-XJ-EFH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-Vh-VB8" userLabel="QuoteLabel">
+                                <rect key="frame" x="7" y="106" width="362" height="346"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspirational quotes provided by ZenQuotes API" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5K-kd-1tk" userLabel="ZenQuoteLabel">
+                                <rect key="frame" x="7" y="640" width="362" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="ad4-k7-EYP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-yg-SWY">
+                                <rect key="frame" x="169.5" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YU-lq-L8n" userLabel="AuthorLabel">
+                                <rect key="frame" x="16" y="460" width="343" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="Geh-Lf-QdR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RA3-85-P17"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f5K-kd-1tk" firstAttribute="centerX" secondItem="ZWi-k6-8af" secondAttribute="centerX" id="4BZ-Oc-XEJ"/>
+                            <constraint firstItem="UGW-5m-PyN" firstAttribute="leading" secondItem="RA3-85-P17" secondAttribute="leading" constant="7" id="7g0-tf-2fu"/>
+                            <constraint firstItem="7YU-lq-L8n" firstAttribute="centerX" secondItem="a6e-SG-WZA" secondAttribute="centerX" id="D1i-mW-i9D"/>
+                            <constraint firstItem="7YU-lq-L8n" firstAttribute="centerX" secondItem="UGW-5m-PyN" secondAttribute="centerX" id="Efq-V8-PWP"/>
+                            <constraint firstItem="fP0-Vh-VB8" firstAttribute="trailing" secondItem="f5K-kd-1tk" secondAttribute="trailing" id="MHq-Ld-79k"/>
+                            <constraint firstItem="fP0-Vh-VB8" firstAttribute="top" secondItem="ZWi-k6-8af" secondAttribute="bottom" constant="27" id="MNY-ab-Q2E"/>
+                            <constraint firstItem="fP0-Vh-VB8" firstAttribute="leading" secondItem="f5K-kd-1tk" secondAttribute="leading" id="OQx-1h-eVe"/>
+                            <constraint firstItem="7YU-lq-L8n" firstAttribute="top" secondItem="fP0-Vh-VB8" secondAttribute="bottom" constant="8" symbolic="YES" id="QFI-al-whw"/>
+                            <constraint firstItem="RA3-85-P17" firstAttribute="trailing" secondItem="UGW-5m-PyN" secondAttribute="trailing" constant="6" id="Qlw-3R-sPd"/>
+                            <constraint firstAttribute="bottom" secondItem="7YU-lq-L8n" secondAttribute="bottom" constant="125" id="Uuj-8K-Wz5"/>
+                            <constraint firstItem="fP0-Vh-VB8" firstAttribute="trailing" secondItem="UGW-5m-PyN" secondAttribute="trailing" id="Vcs-Sr-qes"/>
+                            <constraint firstItem="aBf-yg-SWY" firstAttribute="centerY" secondItem="bdF-1o-AlV" secondAttribute="centerY" id="YCZ-Yb-KO7"/>
+                            <constraint firstItem="7YU-lq-L8n" firstAttribute="centerX" secondItem="aBf-yg-SWY" secondAttribute="centerX" id="cXe-iJ-ynV"/>
+                            <constraint firstItem="7YU-lq-L8n" firstAttribute="leading" secondItem="bdF-1o-AlV" secondAttribute="leadingMargin" id="ddF-Gg-TZR"/>
+                            <constraint firstItem="UGW-5m-PyN" firstAttribute="top" secondItem="7YU-lq-L8n" secondAttribute="bottom" constant="45" id="lzt-7a-x4S"/>
+                            <constraint firstItem="f5K-kd-1tk" firstAttribute="bottom" secondItem="a6e-SG-WZA" secondAttribute="bottom" id="qnb-G7-5Wg"/>
+                            <constraint firstItem="fP0-Vh-VB8" firstAttribute="leading" secondItem="UGW-5m-PyN" secondAttribute="leading" id="xFa-u1-btg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AuthorLabel" destination="7YU-lq-L8n" id="crG-tx-PO1"/>
+                        <outlet property="QuoteLabel" destination="fP0-Vh-VB8" id="syd-qZ-NlS"/>
+                        <outlet property="activityIndicator" destination="aBf-yg-SWY" id="EZl-yA-P9F"/>
+                        <outlet property="backButton" destination="2ah-t5-CRs" id="tB8-lC-x8e"/>
+                        <outlet property="favButton" destination="jb3-sD-mPz" id="Xa8-Sw-fst"/>
+                        <outlet property="imageView" destination="a6e-SG-WZA" id="oIy-T0-iFz"/>
+                        <outlet property="refreshQuoteButton" destination="UGW-5m-PyN" id="fCV-Av-5sA"/>
+                        <outlet property="shareButton" destination="KMS-VC-EEP" id="tVg-AJ-Ua2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74x-Of-enu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288.8" y="236.13193403298354"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NZp-rF-x9Q"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Background2forquotes" width="1284" height="2688"/>
+        <image name="BackgroundforQuote" width="1284" height="2778"/>
+        <image name="books.vertical.fill" catalog="system" width="128" height="109"/>
+        <image name="icon_back-arrow" width="24" height="24"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
